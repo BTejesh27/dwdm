@@ -1,14 +1,14 @@
-data <- iris
-par(mfrow = c(2, 2))
-hist(data$Sepal.Length, main = "Sepal Length", xlab = "Sepal Length", col = "lightblue")
-hist(data$Sepal.Width, main = "Sepal Width", xlab = "Sepal Width", col = "lightgreen")
-hist(data$Petal.Length, main = "Petal Length", xlab = "Petal Length", col = "lightpink")
-hist(data$Petal.Width, main = "Petal Width", xlab = "Petal Width", col = "lightyellow")
+# Load iris dataset
+data(iris)
 
-par(mfrow = c(1, 4))
-boxplot(data$Sepal.Length, main = "Sepal Length", col = "lightblue")
-boxplot(data$Sepal.Width, main = "Sepal Width", col = "lightgreen")
-boxplot(data$Petal.Length, main = "Petal Length", col = "lightpink")
-boxplot(data$Petal.Width, main = "Petal Width", col = "lightyellow")
+# Histograms
+hist(iris$Sepal.Length, main="Histogram of Sepal Length", xlab="Sepal Length", col="blue")
+hist(iris$Sepal.Width, main="Histogram of Sepal Width", xlab="Sepal Width", col="green")
 
-pairs(data[, 1:4], main = "Scatterplot Matrix")
+# Boxplots
+boxplot(iris[,1:4], main="Boxplot of Iris Dataset Variables")
+
+# Scatter Plots (Sepal.Length vs Sepal.Width)
+plot(iris$Sepal.Length, iris$Sepal.Width, main="Scatter Plot of Sepal Length vs Sepal Width", 
+     xlab="Sepal Length", ylab="Sepal Width", col=iris$Species)
+legend("topright", legend=levels(iris$Species), col=1:3, pch=1)
