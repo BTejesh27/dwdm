@@ -1,8 +1,12 @@
-install.packages("dbscan")  # Only if not already installed
-library(dbscan)
+#install.packages("dbscan") if not installed
+
 library(datasets)
+library(dbscan)
+
 data <- iris[, -5]
-db <- dbscan(data, eps = 0.4, minPts = 5)
-iris$Cluster <- as.factor(db$cluster)
-print(table(iris$Cluster))
-print(head(iris))
+
+clustering <- dbscan(data, eps = 0.5, minPts = 5)
+
+iris$cluster <- clustering$cluster
+
+print(iris)
