@@ -1,0 +1,5 @@
+df <- data.frame(Column1 = c(1, 2, 2, 4, 5), Column2 = c("A", "B", "B", "D", "E"))
+print("Duplicated Elements:")
+print(df[duplicated(df), ])
+print("Unique Rows:")
+print(unique(df))
